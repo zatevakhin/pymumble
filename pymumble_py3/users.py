@@ -3,7 +3,7 @@ from .constants import *
 from .errors import TextTooLongError, ImageTooBigError
 from threading import Lock
 from . import messages
-from . import mumble_pb2
+from . import Mumble_pb2 as mumble_pb2
 
 
 class Users(dict):
@@ -204,12 +204,12 @@ class User(dict):
 
         cmd = messages.ModUserState(self.mumble_object.users.myself_session, params)
         self.mumble_object.execute_command(cmd)
-    
+
     def register(self):
         """Register the user (mostly for myself)"""
         params = {"session": self["session"],
                   "user_id": 0}
- 
+
         cmd = messages.ModUserState(self.mumble_object.users.myself_session, params)
         self.mumble_object.execute_command(cmd)
 

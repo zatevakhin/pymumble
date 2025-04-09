@@ -16,7 +16,8 @@ from . import commands
 from . import callbacks
 from . import tools
 
-from . import mumble_pb2
+from . import Mumble_pb2 as mumble_pb2
+
 
 
 def _wrap_socket(sock, keyfile=None, certfile=None, verify_mode=ssl.CERT_NONE, server_hostname=None):
